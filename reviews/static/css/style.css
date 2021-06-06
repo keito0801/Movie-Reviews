@@ -1,0 +1,65 @@
+.pics img{
+    box-shadow: 5px 5px 10px #211717;
+    transition: 0.5s;
+    border: 6px solid rgb(160, 45, 6);
+    border-radius: 5px;
+    width: 350px;
+    height: 350px;
+}
+
+.pics img:hover{
+    cursor: pointer;
+    transform: scale(1.1); 
+    color: #bbb;
+}
+
+.pics{
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.about{
+    margin-top: 20px;
+    height: 400%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: url('../img/cinema.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.flex{
+    width: 100%;
+    border: 1px solid orange;
+    height: 400px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+h2{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 3rem;
+}
+
+.pics h3{
+    margin-left: 5%;
+}
+
+.about h2{
+    color: white;
+}
+
+img{
+    box-shadow: 5px 5px 10px #211717;
+    transition: 0.5s;
+    border: 6px solid rgb(160, 45, 6);
+    border-radius: 5px;
+    width: 350px;
+    height: 350px;
+    align-content: center;
+}

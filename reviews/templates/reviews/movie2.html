@@ -14,7 +14,7 @@
     <!-- Review Section -->
     <img src="{% static 'img/movie.jpg' %}" alt="movie1">
     {% if user.is_authenticated %}
-    <form action="{% url 'movie1' %}" method="POST">
+    <form action="{% url 'movie2' %}" method="POST">
     {% csrf_token %}
         <div class="container">
             <div class="row m-4">
