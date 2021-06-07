@@ -13,7 +13,7 @@
 <body>
   <!--Navbar-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Movie Reviews</a>
+  <a class="navbar-brand" href="{% url 'index' %}">Movie Reviews</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -38,11 +38,8 @@
     </ul>
   </div>
 </nav>
-  <header>
-    
-   
-  </header>
-  
+
+  <!--banner-->
   <div class="about">
     <div class ="flex">
     <h2>Watch</h2>
@@ -50,22 +47,27 @@
     <h2>Discuss</h2>
   </div>
   </div>
+
 <h2>Newest Releases</h2>
   <div class="pics">
   <a href="{% url 'movie1' %}">
     <h3>The Best Movie</h3>
   <img src="{% static 'img/movie.jpg' %}" alt="movie1">
   </a>
-  <a href="{% url 'movie1' %}">
+  <a href="{% url 'movie2' %}">
     <h3>Deadpool</h3>
   <img src="{% static 'img/Deadpool.jpg' %}" alt="movie2">
   </a>
-  <a href="{% url 'movie1' %}">
+  <a href="{% url 'movie3' %}">
     <h3>Fear</h3>
   <img src="{% static 'img/Fear.jpg' %}" alt="movie3">
   </a>
-  
   </div>
+
+  <footer> 
+    Movie Reviews
+  </footer>
+
     <!-- JavaScript Bundle -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

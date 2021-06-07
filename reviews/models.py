@@ -22,7 +22,7 @@ class Review(models.Model):
         (4, '4'),
         (5, '5'),
     )
-    #movie = models.ForeignKey(Movie, on_delete=models.DO_NOTHING,)
+    #movie = models.CharField(max_length=100)
     user_name = models.CharField(max_length=100)
     comment = models.TextField()
     rating = models.IntegerField(choices=RATING_CHOICES)

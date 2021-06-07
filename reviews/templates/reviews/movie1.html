@@ -12,7 +12,7 @@
 <body>
     <!--Navbar-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Movie Reviews</a>
+    <a class="navbar-brand" href="{% url 'index' %}">Movie Reviews</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -38,22 +38,23 @@
     </div>
   </nav>
     <!-- Review Section -->
+    <div class="img">
     <img src="{% static 'img/movie.jpg' %}" alt="movie1">
+    </div>
+
+    <h3 class="review">Leave a Review</h3>
+
     {% if user.is_authenticated %}
     <form action="{% url 'movie1' %}" method="POST">
     {% csrf_token %}
         <div class="container">
-            <div class="row m-4">
-                <label for="user_name">Title:</label>
-                    <input type="text" id=user_name name="user_name" placeholder="Sum up your review in one line" required/>
-            </div>
         <div class="row m-4">
         <label for="comment"></label>
             <textarea id="comment" name="comment" cols="30" rows="10" placeholder="Type review here"></textarea>
     </div>
     <div class="row m-4">
         <label for="Rating">Rating:</label>
-            <select id="Rating" name="Rating" class="col-12 col-md-4 col-xl-3" >
+            <select id="Rating" name="Rating" class="col-8 col-md-4 col-xl-3" >
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -63,20 +64,19 @@
         </div>
         
         <button type="submit">Add Review</button>
-    
+    </div>
     </form>
     
     <p>There are {{count}} reviews</p>
     {% for reviews in reviews reversed %}
-    <div>
-        <h4>{{reviews.user_name}}</h4>
-        <h6>rated {{ reviews.rating }} of 5 by {{ request.user.username }}</h6>
+    <div class="reviews">
+        <h4>rated {{ reviews.rating }} of 5 by {{ request.user.username }}</h4>
         <p>{{ reviews.comment }}</p>
     </div>
     {% endfor %}
 
     {% else %}
-    <h3>login to leave a review</h3>
+    <h3 class="review">login to leave a review</h3>
  <p>There are {{count}} reviews</p>
     {% for reviews in reviews reversed %}
     <div>
