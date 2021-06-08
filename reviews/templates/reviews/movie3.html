@@ -38,18 +38,13 @@
     </div>
   </nav>
     <!-- Review Section -->
-    <div class="img">
+    <div class="img3">
         <img src="{% static 'img/Fear.jpg' %}" alt="movie1">
-        </div>
+    </div>
     {% if user.is_authenticated %}
     <form action="{% url 'movie3' %}" method="POST">
     {% csrf_token %}
-        <div class="container">
-            <div class="row m-4">
-                <label for="user_name">Title:</label>
-                    <input type="text" id=user_name name="user_name" placeholder="Sum up your review in one line" required/>
-            </div>
-        <div class="row m-4">
+    <div class="row m-4">
         <label for="comment"></label>
             <textarea id="comment" name="comment" cols="30" rows="10" placeholder="Type review here"></textarea>
     </div>
@@ -62,28 +57,27 @@
                 <option value="4">4</option>
                 <option value="5">5</option>
             </select>
-        </div>
+    </div>
         
         <button type="submit">Add Review</button>
-    
     </form>
     
-    <p>There are {{count}} reviews</p>
+    <div class=reviews>
+        <p>There are {{count}} reviews</p>
+    </div>
     {% for reviews in reviews reversed %}
-    <div>
-        <h4>{{reviews.user_name}}</h4>
-        <h6>rated {{ reviews.rating }} of 5 by {{ request.user.username }}</h6>
+    <div class="reviews">
+        <h4>rated {{ reviews.rating }} of 5 by {{ request.user.username }}</h4>
         <p>{{ reviews.comment }}</p>
     </div>
     {% endfor %}
 
     {% else %}
-    <h3>login to leave a review</h3>
+    <h3 class="review">login to leave a review</h3>
  <p>There are {{count}} reviews</p>
     {% for reviews in reviews reversed %}
-    <div>
-        <h4>{{reviews.user_name}}</h4>
-        <h6>rated {{ reviews.rating }} of 5 by {{ request.user.username }}</h6>
+    <div class="reviews">
+        <h4>rated {{ reviews.rating }} of 5 by {{ request.user.username }}</h4>
         <p>{{ reviews.comment }}</p>
     </div>
     {% endfor %}

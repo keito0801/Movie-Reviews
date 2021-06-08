@@ -50,7 +50,7 @@ def movie2(request):
     review_count = review.count()
     if request.method == "POST":
         print(request.POST)
-        movie1 = Review.objects.create(
+        movie2 = Review.objects.create(
             user_name='Deadpool',
             comment=request.POST.get('comment'),
             rating=request.POST.get('Rating')
@@ -59,7 +59,7 @@ def movie2(request):
         context ={
             'reviews': review,
             'count': review_count,
-            'page_name': 'movie1',
+            'page_name': 'movie2',
         }
         return render(request, 'reviews/movie1.html', context)
     else:
@@ -78,7 +78,7 @@ def movie3(request):
     review_count = review.count()
     if request.method == "POST":
         print(request.POST)
-        movie1 = Review.objects.create(
+        movie3 = Review.objects.create(
             user_name='Fear',
             comment=request.POST.get('comment'),
             rating=request.POST.get('Rating')

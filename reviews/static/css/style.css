@@ -1,10 +1,17 @@
+body{
+    background:linear-gradient(rgba(22, 22, 22, 0.5), rgba(105, 104, 104, 0.5)), url('../img/seats2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
 .pics img{
     box-shadow: 5px 5px 10px #211717;
     transition: 0.5s;
     border: 6px solid rgb(160, 45, 6);
     border-radius: 5px;
-    width: 350px;
-    height: 350px;
+    width: 400px;
+    height: 400px;
 }
 
 .pics img:hover{
@@ -12,14 +19,16 @@
     transform: scale(1.1); 
     color: #bbb;
 }
-
+@media (min-width: 1000px){
 .pics{
     display:flex;
     justify-content: space-evenly;
     margin-bottom: 50px;
 }
-
+}
 .about{
+    border: 50px black solid;
+    width: 50%;
     margin-top: 20px;
     height: 400%;
     display: flex;
@@ -28,8 +37,27 @@
     background: url('../img/cinema.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+    margin-left: 26%;
+    
 }
 
+@media (max-width: 900px){
+    .about{
+        border: 1px black solid;
+        width: 100%;
+        margin-top: 20px;
+        height: 400%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        background: url('../img/cinema.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        margin-left: 0%;
+        }
+}
 .flex{
     width: 100%;
     border: 1px solid orange;
@@ -45,6 +73,7 @@ h2{
     margin-top: 5%;
     margin-bottom: 5%;
     font-size: 3rem;
+    color: white;
 }
 
 .pics h3{
@@ -65,17 +94,54 @@ img{
     align-content: center;
 }
 
+
 footer{
     background-color: grey;
 }
 
 .img{
     border: 50px black solid;
+    width: 50%;
+    margin-top: 20px;
+    height: 400%;
     display: flex;
+    align-items: center;
     justify-content: space-evenly;
-    background: url('../img/reel.jpg');
+    background: url('../img/movie.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+    margin-left: 26%;
+}
+
+.img2{
+    border: 50px black solid;
+    width: 50%;
+    margin-top: 20px;
+    height: 400%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: url('../img/Deadpool.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-left: 26%;
+}
+
+.img3{
+    border: 50px black solid;
+    width: 50%;
+    margin-top: 20px;
+    height: 400%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: url('../img/Fear.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-left: 26%;
 }
 
 form{
@@ -86,6 +152,7 @@ form{
 .review{
     margin-left: 50px;
     margin-top: 30px;
+    color: whitesmoke;
 }
 
 form button{
@@ -94,4 +161,23 @@ form button{
 
 .reviews{
     margin-left: 50px;
+    color: whitesmoke;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+h4{
+    font-size: 2.5rem;
+}
+
+.img img{
+    visibility: hidden;
+}
+
+.img2 img{
+    visibility: hidden;
+}
+
+.img3 img{
+    visibility: hidden;
 }

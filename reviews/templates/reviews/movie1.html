@@ -48,9 +48,9 @@
     <form action="{% url 'movie1' %}" method="POST">
     {% csrf_token %}
         <div class="container">
-        <div class="row m-4">
+        <div class="row m-2">
         <label for="comment"></label>
-            <textarea id="comment" name="comment" cols="30" rows="10" placeholder="Type review here"></textarea>
+            <textarea id="comment" name="comment" cols="10" rows="10" placeholder="Type review here"></textarea>
     </div>
     <div class="row m-4">
         <label for="Rating">Rating:</label>
@@ -66,8 +66,11 @@
         <button type="submit">Add Review</button>
     </div>
     </form>
-    
+
+    <!-- List of reviews -->
+    <div class=reviews>
     <p>There are {{count}} reviews</p>
+    </div>
     {% for reviews in reviews reversed %}
     <div class="reviews">
         <h4>rated {{ reviews.rating }} of 5 by {{ request.user.username }}</h4>
@@ -79,9 +82,8 @@
     <h3 class="review">login to leave a review</h3>
  <p>There are {{count}} reviews</p>
     {% for reviews in reviews reversed %}
-    <div>
-        <h4>{{reviews.user_name}}</h4>
-        <h6>rated {{ reviews.rating }} of 5 by {{ request.user.username }}</h6>
+    <div class="reviews">
+        <h4>rated {{ reviews.rating }} of 5 by {{ request.user.username }}</h4>
         <p>{{ reviews.comment }}</p>
     </div>
     {% endfor %}
