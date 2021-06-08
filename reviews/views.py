@@ -19,12 +19,13 @@ def index(request):
 
 
 def movie1(request):
-    review = Review.objects.filter(user_name='The Best Movie')
+    review = Review.objects.filter(title='The Best Movie')
     review_count = review.count()
     if request.method == "POST":
         print(request.POST)
         movie1 = Review.objects.create(
-            user_name='The Best Movie',
+            title='The Best Movie',
+            user_name=request.user.username,
             comment=request.POST.get('comment'),
             rating=request.POST.get('Rating')
         )
@@ -36,7 +37,7 @@ def movie1(request):
         }
         return render(request, 'reviews/movie1.html', context)
     else:
-         review = Review.objects.filter(user_name='The Best Movie')
+         review = Review.objects.filter(title='The Best Movie')
     review_count = review.count()
     context = {
         'reviews': review,
@@ -46,12 +47,13 @@ def movie1(request):
     return render(request, 'reviews/movie1.html', context)
 
 def movie2(request):
-    review = Review.objects.filter(user_name='Deadpool')
+    review = Review.objects.filter(title='Deadpool')
     review_count = review.count()
     if request.method == "POST":
         print(request.POST)
         movie2 = Review.objects.create(
-            user_name='Deadpool',
+            title='Deadpool',
+            user_name=request.user.username,
             comment=request.POST.get('comment'),
             rating=request.POST.get('Rating')
         )
@@ -61,9 +63,9 @@ def movie2(request):
             'count': review_count,
             'page_name': 'movie2',
         }
-        return render(request, 'reviews/movie1.html', context)
+        return render(request, 'reviews/movie2.html', context)
     else:
-         review = Review.objects.filter(user_name='Deadpool')
+         review = Review.objects.filter(title='Deadpool')
     review_count = review.count()
     context = {
         'reviews': review,
@@ -74,12 +76,13 @@ def movie2(request):
 
 
 def movie3(request):
-    review = Review.objects.filter(user_name='Fear')
+    review = Review.objects.filter(title='Fear')
     review_count = review.count()
     if request.method == "POST":
         print(request.POST)
         movie3 = Review.objects.create(
-            user_name='Fear',
+            title='Fear',
+            user_name=request.user.username,
             comment=request.POST.get('comment'),
             rating=request.POST.get('Rating')
         )
@@ -91,7 +94,7 @@ def movie3(request):
         }
         return render(request, 'reviews/movie3.html', context)
     else:
-         review = Review.objects.filter(user_name='Fear')
+         review = Review.objects.filter(title='Fear')
     review_count = review.count()
     context = {
         'reviews': review,

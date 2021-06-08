@@ -61,7 +61,7 @@
         
         <button type="submit">Add Review</button>
     </form>
-    
+ <!-- List of reviews -->   
     <div class=reviews>
         <p>There are {{count}} reviews</p>
     </div>
@@ -73,7 +73,7 @@
     {% endfor %}
 
     {% else %}
-    <h3 class="review">login to leave a review</h3>
+    <h3 class="review">login to leave a review<a href="/login"> Login Here</a></h3>
  <p>There are {{count}} reviews</p>
     {% for reviews in reviews reversed %}
     <div class="reviews">

@@ -23,6 +23,7 @@ class Review(models.Model):
         (5, '5'),
     )
     #movie = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
     user_name = models.CharField(max_length=100)
     comment = models.TextField()
     rating = models.IntegerField(choices=RATING_CHOICES)
