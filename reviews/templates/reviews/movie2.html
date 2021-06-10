@@ -66,25 +66,25 @@
 
     <!-- List of Reviews -->
     <div class=reviews>
-    <p>There are {{count}} reviews</p>
-    </div>
-    {% for reviews in reviews reversed %}
-    <div class="reviews">
-        <h4>rated {{ reviews.rating }} of 5 by {{ request.user.username }}</h4>
-        <p>{{ reviews.comment }}</p>
-    </div>
-    {% endfor %}
-
-    {% else %}
-    <h3 class="review">login to leave a review<a href="/login"> Login Here</a></h3>
- <p>There are {{count}} reviews</p>
-    {% for reviews in reviews reversed %}
-    <div class="reviews">
-        <h4>rated {{ reviews.rating }} of 5 by {{ request.user.username }}</h4>
-        <p>{{ reviews.comment }}</p>
-    </div>
-    {% endfor %}
-    {% endif %}
+      <p>There are {{count}} reviews</p>
+      </div>
+      {% for reviews in reviews reversed %}
+      <div class="reviews">
+          <h4>rated {{ reviews.rating }} of 5 by {{ reviews.user_name }}</h4>
+          <p>{{ reviews.comment }}</p>
+      </div>
+      {% endfor %}
+  
+      {% else %}
+      <h3 class="review">login to leave a review<a href="/login"> Login Here</a></h3><p class="text-center">
+   <p>There are {{count}} reviews</p>
+      {% for reviews in reviews reversed %}
+      <div class="reviews">
+          <h4>rated {{ reviews.rating }} of 5 by {{ request.user.username }}</h4>
+          <p>{{ reviews.comment }}</p>
+      </div>
+      {% endfor %}
+      {% endif %}
     <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
