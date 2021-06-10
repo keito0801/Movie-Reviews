@@ -83,7 +83,7 @@
  <p>There are {{count}} reviews</p>
     {% for reviews in reviews reversed %}
     <div class="reviews">
-        <h4>rated {{ reviews.rating }} of 5 by {{ request.user.username }}</h4>
+        <h4>rated {{ reviews.rating }} of 5 by {{ reviews.user_name }}</h4>
         <p>{{ reviews.comment }}</p>
     </div>
     {% endfor %}
